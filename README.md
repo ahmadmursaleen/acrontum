@@ -3,9 +3,9 @@
 This gives a head start dashboard template for bootstrapping a web app
 
 ## Method
-
-git clone 
-remove the previous history 
-rm -rf .git
-and reinitialize 
-git init
+<br />
+git clone <br />
+remove the previous history <br />
+rm -rf .git<br />
+and reinitialize <br />
+git init<br />
