@@ -1,29 +1,29 @@
 <div class="animated fadeIn">
   <div class="row" *ngFor="let levels of carParking; let levelIndex = index">
     <div *ngFor="let parking of levels; let parkIndex = index">
-      <h3>
+      <h6>
         <span class="badge badge-primary"
           >L:{{ levelIndex + 1 }} P:{{ parkIndex + 1 }}</span
         >
-      </h3>
+      </h6>
 
       <button
         *ngIf="parking == true"
         type="button"
         class="btn btn btn-outline-success"
         disabled
-        style="width: 150px;height: 100px;"
+        style="width: 50px;height: 50px;"
       >
-        <h1>Free</h1>
+        Free
       </button>
       <button
         *ngIf="parking == false"
         type="button"
         class="btn btn-danger"
         (click)="freeParking(levelIndex, parkIndex)"
-        style="width: 150px;height: 100px;"
+        style="width: 50px;height: 50px;"
       >
-        <h5>Occupied</h5>
+        Occ
       </button>
     </div>
     <br />
