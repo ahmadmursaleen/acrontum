@@ -38,35 +38,5 @@ export const navItems: NavData[] = [
       variant: "info",
       text: "NEW"
     }
-  },
-  {
-    title: true,
-    name: "Title 1"
-  },
-  {
-    name: "Parent Node",
-    url: "/dashboard",
-    icon: "icon-drop"
-  },
-  {
-    title: true,
-    name: "Title 2"
-  },
-  {
-    name: "Parent Node",
-    url: "/dashboard",
-    icon: "icon-puzzle",
-    children: [
-      {
-        name: "Child Node 1",
-        url: "/dashboard",
-        icon: "icon-puzzle"
-      },
-      {
-        name: "Child Node 2",
-        url: "/dashboard",
-        icon: "icon-puzzle"
-      }
-    ]
   }
 ];

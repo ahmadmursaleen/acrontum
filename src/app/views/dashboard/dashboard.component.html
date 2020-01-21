@@ -1,42 +1,53 @@
 <div class="animated fadeIn">
-  <div class="row">
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 1</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
+  <div class="row" *ngFor="let levels of carParking; let levelIndex = index">
+    <div *ngFor="let parking of levels; let parkIndex = index">
+      <h3>
+        <span class="badge badge-primary"
+          >L:{{ levelIndex + 1 }} P:{{ parkIndex + 1 }}</span
+        >
+      </h3>
+
+      <button
+        *ngIf="parking == true"
+        type="button"
+        class="btn btn btn-outline-success"
+        disabled
+        style="width: 150px;height: 100px;"
+      >
+        <h1>Free</h1>
+      </button>
+      <button
+        *ngIf="parking == false"
+        type="button"
+        class="btn btn-danger"
+        (click)="freeParking(levelIndex, parkIndex)"
+        style="width: 150px;height: 100px;"
+      >
+        <h5>Occupied</h5>
+      </button>
     </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 2</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 3</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
-    </div>
-    <!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="card">
-        <div class="card-header">This is card's header - 4</div>
-        <div class="card-body">This is card's body</div>
-        <div class="card-footer">This is card's footer</div>
-      </div>
-    </div>
-    <!--/.col-->
+    <br />
+    <br />
   </div>
-  <!--/.row-->
-  <div class="card">
-    <div class="card-header">This is card's header</div>
-    <div class="card-body">This is card's body</div>
-    <div class="card-footer">This is card's footer</div>
-  </div>
+  <br /><br /><br />
+  <button
+    type="button"
+    class="btn btn-dark"
+    (click)="assignParking()"
+    style="width: 150px;height: 50px;"
+    *ngIf="parkingFull == false"
+  >
+    <h2>Assign</h2>
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="assignParking()"
+    style="width: 150px;height: 50px;"
+    *ngIf="parkingFull == true"
+    disabled
+  >
+    <h2>Full</h2>
+  </button>
+  <p>L = Level, P= Parking</p>
 </div>
